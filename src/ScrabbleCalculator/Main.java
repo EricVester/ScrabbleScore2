@@ -1,16 +1,25 @@
 package ScrabbleCalculator;
+import java.io.*;
 
-import java.util.Scanner;
 public class Main {
     public static void main(String[] args)
-    {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Please input a word for a scrabble calculation:");
-        String userInput = input.nextLine();
+    {try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
 
-        ScrabbleWordCalculator newWord = new ScrabbleWordCalculator(userInput);
-        newWord.wordCheckCalculator();
-        newWord.printScore();
+        while (true) {
+            System.out.println("Enter a word (type 'q' to quit): ");
+            String input = br.readLine();
+            if (input.equals("q")) {
+                break;
+            }
+            Calculation w1 = new Calculation(input);
+            System.out.println(input + " = " + w1.calculateScore() + " points");
+        }
+    } catch (IOException e) {
+        System.out.println("IO Exception");
+    }
+
+
+
 
     }
 }
