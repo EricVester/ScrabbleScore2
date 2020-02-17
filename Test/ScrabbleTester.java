@@ -52,15 +52,15 @@ class ScrabbleTester {
     @Test
     void calcScrabbleWordUpperCase()
     {
-        ScrabbleWordCalculator extremelyLongWorduc = new ScrabbleWordCalculator("IMPEDIMENTA");
-        assertEquals(18, extremelyLongWorduc.wordCheckCalculator());
+        ScrabbleWordCalculator upperCaseWord = new ScrabbleWordCalculator("UPPER");
+        assertEquals(9, upperCaseWord.wordCheckCalculator());
     }
 
     @Test
     void calcScrabbleWordLowerCase()
     {
-        ScrabbleWordCalculator extremelyLongWordlc = new ScrabbleWordCalculator("impedimenta");
-        assertEquals(18, extremelyLongWordlc.wordCheckCalculator());
+        ScrabbleWordCalculator lowerCaseWord = new ScrabbleWordCalculator("lower");
+        assertEquals(8, lowerCaseWord.wordCheckCalculator());
     }
 
 
